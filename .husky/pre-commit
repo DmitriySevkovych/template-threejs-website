@@ -1,0 +1,20 @@
+#!/bin/sh
+. "$(dirname $0)/_/husky.sh"
+echo "HUSKY PRE-COMMIT HOOK STARTING"
+
+# HTML: Handlebars sanity check using htmlhint
+echo "HTML: Handlebars sanity check using htmlhint"
+npx htmlhint **/*.hbs
+echo "HTML check ok"
+
+# JS: sanity check using eslint
+echo "JS: sanity check using eslint"
+npx eslint --ignore-pattern 'src/js/extlib/' --format=node_modules/eslint-formatter-pretty 'src/js/'
+echo "JS check ok"
+
+# CSS: sanity check using stylelint
+# echo "CSS: sanity check using stylelint"
+# npx stylelint "**/*.?[a,c]ss"
+# echo "CSS check ok"
+
+echo "HUSKY PRE-COMMIT HOOK DONE"

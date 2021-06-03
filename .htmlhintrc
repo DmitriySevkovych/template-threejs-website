@@ -1,0 +1,21 @@
+/*
+ * List of available htmlhint rules
+ * https://htmlhint.com/docs/user-guide/list-rules
+ */
+{
+    "attr-lowercase": ["viewBox", "stdDeviation"],
+    "tagname-lowercase": false,
+    "attr-value-double-quotes": true,
+    "attr-no-duplication": true,
+    "attr-no-unnecessary-whitespace": true,
+    "tag-pair": true,
+    "tag-self-close": true,
+    "id-unique": true,
+    "id-class-ad-disabled": true,
+    "doctype-first": false,
+    "alt-require": true,
+    "inline-script-disabled": true,
+    "inline-style-disabled": true,
+    "style-disabled": true,
+    "head-script-disabled": true
+}
