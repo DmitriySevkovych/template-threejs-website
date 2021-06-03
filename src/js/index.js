@@ -78,7 +78,8 @@ controls.enableDamping = true // For inertia-like effect, updated in tick! (remo
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
+    canvas: canvas,
+    // powerPreference: 'high-performance'
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setClearColor(debugObject.clearColor)
@@ -86,6 +87,21 @@ renderer.setClearColor(debugObject.clearColor)
 /**
  * Loaders
  */
+const loadingManager = new THREE.LoadingManager()
+loadingManager.onStart = () => {
+    console.log('loading started')
+}
+loadingManager.onLoad = () => {
+    console.log('loading finished')
+}
+loadingManager.onProgress = () => {
+    console.log('loading progressing')
+}
+loadingManager.onError = () => {
+    console.log('loading error')
+}
+
+const textureLoader = new THREE.TextureLoader(loadingManager)
 
 
 /**
