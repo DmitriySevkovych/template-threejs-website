@@ -52,7 +52,7 @@ module.exports = {
             // Images
             {
                 test: /\.(png|jpg|jpeg|gif|webp|avif)$/i,
-                type: 'asset/resource', // Webpack 5.x: loads file into output folter (file-loader)
+                type: 'asset/resource' // Webpack 5.x: loads file into output folter (file-loader)
             },
             {
                 test: /\.(svg)$/i,
@@ -62,7 +62,7 @@ module.exports = {
             // Fonts
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                type: 'asset/resource', // Webpack 5.x: loads file into output folter (file-loader)
+                type: 'asset/resource' // Webpack 5.x: loads file into output folter (file-loader)
             },
             // GLSL
             {
@@ -71,6 +71,11 @@ module.exports = {
                 exclude: /node_modules/
             },
             // { test: /\.(glsl|vs|fs|vert|frag)$/i, loader: 'glslify-loader', exclude: /node_modules/ }
+            // Models
+            {
+                test: /\.(glb|gltf|fbx|obj)$/,
+                type: 'asset/resource' // Webpack 5.x: loads file into output folder (file-loader)
+            }
         ]
     },
     plugins: [
